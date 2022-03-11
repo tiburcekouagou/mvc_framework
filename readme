@@ -1,0 +1,53 @@
+# framwork maison
+
+## Instructions
+
+### Mise en place d'une structure VC'
+
+1. mise en place des différents dossiers controller, views, models, router
+2. mise en place du fichier index.php qui lui required de notre template situé dans le dossier template
+3. mise en place du router
+4. mise en place des controllers HOME, ABOUT, LOGIN, RIGISTER 
+5. mise en place des views home, about, login, register, chaque vue aura un titre : (<h1>Home</h1>)
+6. affichage des différentes pages lié à la navbar en passant par le router qui lui appelle le contrôler qui lui va retourne la vu
+
+### Parti II DataBase
+
+7. Modifiant un peu la page register crée un formulaire d'inscription en POST avec les champs suivants : ( nom, prénom, téléphone, e-mail) 
+8. créer dans votre class register une méthode "insert"
+9. envoyer les données "insert" et faites un var dump() pour avoir un aperçu du résultat 
+10. mise en place des Méthode Php isset() et empty() pour vérifier que les champs sont bien remplies avant d'etre envoyé
+
+### Parti III DataBase
+11. mise en place de la BDD sur phpMyAdmin qui aura pour nom 'Mon_mvc'
+12. mise en place du dossier 'src' a la racine du projet, qui lui aura un dossier database ou sera inséré le fichier BDD 
+13. mise en place de la connection a la BDD
+14. instencié votre class BDD dans index.php et faire un var_dum() pour vérifieé que tout fonctionne bien : retour de var_dump() : affichage (object(PDO)[2] ? error) 
+15. supprimé l'etape 14 :) c'était juste un vérification
+
+
+### Parti IV SQL
+16. dans le dossier Models crée une Class user qui hérite de votre Bdd
+17. crée une méthode create_table qui aura la connexion à la BDD afin de pouvoir faire la requête qui permet de créer la table users et ces champs : ID, NOM, PRENOM, PHONE, MAIL
+18. toujours dans les models crée une méthode add qui fera une requête afin d'insérer les données en Bdd
+19. Modifiant la class register qui va désormais hériter du modèle users
+19. modifiant la méthode INSERT dans la class Register, 
+vérifié que notre parametre est pas vide et appeler add(user["name"], users['lname], users['phone'], users['mail'])
+
+### Parti V Login
+
+SUPER :) nous avons nos premières données dans la BDD et nous allons pouvoir l'utilisée afin de créer la partie LOGIN;)
+
+20. modifiant le fichier login HTML, mise en place d'un formulaire qui aura comme champs E-mail et nom.
+
+modifiant le fichier LOGIN.PHP en ajoutant une méthode get Login()
+
+ATTENTION : ce fichier hérite du modèle user
+
+mise en place d'une méthode teck Login() qui fera la requête  et retournera les données à get Login()
+
+21. faite les vérification au niveau du formulaire (input non vide : empty()) 
+
+22. si tout est OK mise en place de la session afin de garder l'utilisateur connecter 
+
+23. des modification viendra surment .....
